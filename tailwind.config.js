@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       container: {
         padding: {
-          DEFAULT : '1.2rem'
+          DEFAULT : '1.2rem',
+          sm : '4rem'
         }
       },
       fontFamily: {

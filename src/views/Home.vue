@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <Navbar />
-        <h1>Home</h1>
-        <button class="px-6 py-2 bg-green-500 rounded-xl">Button</button>
-    </div>
+    <Navbar />
+    <main class="py-28">
+       <Hero />
+    </main>
 </template>
 
 <script>
     import Navbar from '../components/Navbar.vue';
+    import Hero from '../components/Hero.vue';
 
     export default {
         name: 'Home',
         components: {
-            Navbar
+            Navbar,
+            Hero
         }
     }
 </script>
