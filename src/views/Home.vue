@@ -4,10 +4,10 @@
         <Hero />
 
         <div class="container mx-auto">
-            <div class="font-bold text-3xl mb-8">
+            <div class="font-bold text-3xl mb-8 text-center lg:text-left">
                 Best <span class="text-teal-500 border-b-4 border-gray-900">Foods</span>
             </div>
-            <div class="flex space-x-6 mb-10">
+            <div class="flex flex-wrap -mx-2 mb-10">
                 <template v-for="product in products" :key="product.id">
                     <CardProduct :product="product" />
                 </template>
