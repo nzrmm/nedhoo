@@ -8,14 +8,14 @@
                 Best <span class="text-teal-500 border-b-4 border-gray-900">Foods</span>
             </div>
             <div class="flex flex-wrap -mx-2 mb-10">
-                <template v-for="product in products" :key="product.id">
-                    <CardProduct :product="product" />
+                <template v-for="food in foods" :key="food.id">
+                    <CardFoods :food="food" />
                 </template>
             </div>
             <div class="flex justify-center">
-                <router-link to="/all"
+                <router-link :to="{name : 'Foods'}"
                     class="group relative px-8 inline-flex items-center text-gray-900 transition-all">
-                    <span class="py-2 group-hover:-translate-x-2 transition-all group-hover:border-b border-teal-500 font-medium">All Products</span>
+                    <span class="py-2 group-hover:-translate-x-2 transition-all group-hover:border-b border-teal-500 font-medium">All Foods</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5 absolute right-0 opacity-0 group-hover:opacity-100 group-hover:mr-3 transition-all"
                         viewBox="0 0 20 20" fill="currentColor">
@@ -32,7 +32,7 @@
 <script>
     import Navbar from '../components/Navbar.vue';
     import Hero from '../components/Hero.vue';
-    import CardProduct from '../components/CardProduct.vue';
+    import CardFoods from '../components/CardFoods.vue';
     import axios from 'axios';
 
     export default {
@@ -40,17 +40,17 @@
         components: {
             Navbar,
             Hero,
-            CardProduct
+            CardFoods
         },
         data() {
             return {
-                products: []
+                foods: []
             }
         },
         mounted() {
-            axios.get('http://localhost:4000/best-products')
+            axios.get('http://localhost:4000/best-foods')
                 .then(response => {
-                    this.products = response.data;
+                    this.foods = response.data;
                 })
                 .catch(error => {
                     console.log(error);

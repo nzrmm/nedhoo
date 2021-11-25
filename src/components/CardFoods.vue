@@ -3,12 +3,10 @@
         <div class="p-5 rounded-2xl bg-gray-900 ">
             <img src="https://source.unsplash.com/featured/?food" class="w-full h-44 rounded-2xl mb-6 object-cover"
                 alt="card-img">
-            <div class="px-4 flex items-center justify-between">
-                <div class="w-8/12">
-                    <h1 class="text-xl text-white mb-1">{{ product.name }}</h1>
-                    <p class="font-bold text-lg text-teal-500 ">Rp. {{ product.price }}</p>
-                </div>
-                <div class="w-4/12 flex justify-end">
+            <div class="px-4">
+                <h1 class="text-xl text-white mb-1">{{ food.name }}</h1>
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-lg text-teal-500 ">Rp. {{ food.price }}</p>
                     <router-link to="/order"
                         class="w-8 h-8 rounded-full flex justify-center items-center bg-teal-500 hover:bg-gray-700 text-white hover:text-teal-500 transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -25,8 +23,8 @@
 
 <script>
     export default {
-        name: 'CardProduct',
-        props: ['product']
+        name: 'CardFoods',
+        props: ['food']
     }
 </script>
 
