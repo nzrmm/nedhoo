@@ -1,6 +1,6 @@
 <template>
     <Navbar />
-    <main class="py-28">
+    <main class="py-16 lg:py-28">
        <Hero />
     </main>
 </template>
