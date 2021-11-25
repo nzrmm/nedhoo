@@ -3,7 +3,7 @@
     <main class="py-16 lg:py-28">
         <Hero />
 
-        <div class="container mx-auto py-20">
+        <div class="container mx-auto">
             <div class="font-bold text-3xl mb-8">
                 Best <span class="text-teal-500 border-b-4 border-gray-900">Foods</span>
             </div>

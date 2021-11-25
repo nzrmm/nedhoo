@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div class="container mx-auto mb-20">
         <div class="flex flex-col-reverse lg:flex-row items-center">
             <div class="w-full lg:w-6/12 flex flex-col items-center lg:items-start">
                 <h1 class="mb-6 text-4xl lg:text-5xl text-center lg:text-left font-bold text-gray-900 leading-tight">Discover the taste of very <span
