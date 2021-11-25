@@ -1,13 +1,14 @@
 <template>
     <nav class="bg-gray-900">
-        <div class="container mx-auto py-6 flex items-center">
-            <div class="w-2/12 flex items-center text-white">
+        <div class="container mx-auto py-4 flex items-center">
+            <div class="w-2/12 flex items-center text-white mr-4 lg:mr-0">
                 <div
                     class="w-10 h-10 -rotate-12 bg-teal-500 rounded-xl shadow font-bold flex justify-center items-center mr-4">
                     N
                 </div>
-                <span class="font-bold">Nedhoo</span>
+                <span class="font-bold hidden lg:inline">Nedhoo</span>
             </div>
+
             <div class="w-8/12">
                 <ul class="text-white flex space-x-8">
                     <li class="">
@@ -18,6 +19,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="w-2/12 flex justify-end">
                 <router-link to="{name : 'Cart'}" class="flex items-center text-white">
                     <span class="mr-4">Cart</span>
