@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased bg-gray-100 min-h-screen">
+  <div class="antialiased bg-white min-h-screen">
     <router-view></router-view>
   </div>
 </template>

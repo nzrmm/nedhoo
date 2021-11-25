@@ -12,7 +12,7 @@ module.exports = {
       container: {
         padding: {
           DEFAULT : '1.2rem',
-          sm : '6rem'
+          sm : '4rem'
         }
       },
       fontFamily: {
