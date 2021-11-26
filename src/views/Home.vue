@@ -1,20 +1,20 @@
 <template>
     <Navbar />
-    <main class="py-16 lg:py-28">
+    <main class="py-16">
         <Hero />
 
         <div class="container mx-auto">
-            <div class="font-bold text-3xl mb-8 text-center lg:text-left">
-                Best <span class="text-teal-500 border-b-4 border-gray-900">Foods</span>
+            <div class="font-bold text-3xl text-gray-900 dark:text-white mb-12 text-center">
+                Best <span class="text-teal-500 border-b-4 border-gray-900 dark:border-gray-400">Foods</span>
             </div>
-            <div class="flex flex-wrap -mx-2 mb-10">
+            <div class="flex flex-wrap -mx-3 mb-10">
                 <template v-for="food in foods" :key="food.id">
                     <CardFoods :food="food" />
                 </template>
             </div>
             <div class="flex justify-center">
                 <router-link :to="{name : 'Foods'}"
-                    class="group relative px-8 inline-flex items-center text-gray-900 transition-all">
+                    class="group relative px-8 inline-flex items-center text-gray-900 dark:text-white transition-all">
                     <span class="py-2 group-hover:-translate-x-2 transition-all group-hover:border-b border-teal-500 font-medium">All Foods</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5 absolute right-0 opacity-0 group-hover:opacity-100 group-hover:mr-3 transition-all"

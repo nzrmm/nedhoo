@@ -1,10 +1,10 @@
 <template>
-    <div class="container mx-auto mb-20">
+    <div class="container mx-auto mb-28">
         <div class="flex flex-col-reverse lg:flex-row items-center">
             <div class="w-full lg:w-6/12 flex flex-col items-center lg:items-start">
-                <h1 class="mb-6 text-4xl lg:text-5xl text-center lg:text-left font-bold text-gray-900 leading-tight">Discover the taste of very <span
+                <h1 class="mb-6 text-4xl lg:text-5xl text-center lg:text-left font-bold text-gray-900 dark:text-white leading-tight">Discover the taste of very <span
                         class="text-teal-500">delicious</span>.</h1>
-                <p class="w-11/12 text-center lg:text-left lg:w-8/12 text-gray-600 leading-relaxed mb-10">Made with mom's recipe that will make all food
+                <p class="w-11/12 text-center lg:text-left lg:w-8/12 text-gray-600 dark:text-gray-400 leading-relaxed mb-10">Made with mom's recipe that will make all food
                     have a taste that tells comfort and longing to the family</p>
                 <div class="flex justify-center lg:justify-start">
                     <router-link :to="{name : 'Foods'}" class="group relative px-8 py-2 inline-flex items-center bg-teal-500 rounded-xl text-white transition-all">
@@ -15,8 +15,8 @@
                     </router-link>
                 </div>
             </div>
-            <div class="w-full lg:w-6/12 mb-6 lg:mb-0">
-                <img src="../assets/images/hero.svg" alt="hero-img">
+            <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 mb-6 lg:mb-0">
+                <img src="../assets/images/hero-1.svg" alt="hero-img">
             </div>
         </div>
     </div>
