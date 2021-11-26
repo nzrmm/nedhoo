@@ -1,9 +1,9 @@
 <template>
-    <nav class="bg-gray-900">
+    <nav class="bg-teal-500 dark:bg-transparent">
         <div class="container mx-auto py-4 flex items-center">
             <div class="w-2/12 flex items-center text-white mr-4 lg:mr-0">
                 <div
-                    class="w-10 h-10 -rotate-12 bg-teal-500 rounded-xl shadow font-bold flex justify-center items-center mr-4">
+                    class="w-10 h-10 -rotate-12 bg-gray-900 dark:bg-teal-500 rounded-xl shadow font-bold flex justify-center items-center mr-4">
                     N
                 </div>
                 <span class="font-bold hidden lg:inline">Nedhoo</span>

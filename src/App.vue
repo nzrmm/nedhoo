@@ -2,8 +2,8 @@
   <div class="antialiased bg-white dark:bg-gray-900 min-h-screen">
     <router-view></router-view>
   </div>
+  <Footer />
 
-    <Footer />
 </template>
 
 <script>
