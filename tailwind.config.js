@@ -31,6 +31,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('daisyui'),
     plugin(({ addUtilities }) => {
       const utilities = {
         '.icon-search' : {
