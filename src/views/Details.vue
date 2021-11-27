@@ -5,27 +5,27 @@
             <div class="flex justify-center items-center">
                 <div class="w-5/12">
                     <img src="https://source.unsplash.com/featured/?food"
-                        class="w-full h-[28rem] object-cover rounded-xl" alt="">
+                        class="w-full h-[28rem] object-cover rounded-xl" alt="image-details">
                 </div>
                 <div class="w-5/12 px-8 text-white">
                     <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ food.name }}</h1>
                     <p class="mb-6 text-white/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
                         necessitatibus.
                     </p>
-                    <form @submit.prevent="checkoutOrder">
+                    <form @submit.prevent="orderNow">
                         <div class="flex items-center justify-between mb-6">
                             <div>
                                 <p class="font-semibold mb-4">Amount Serving</p>
-                                <input v-model.number="checkout.amount"
+                                <input v-model.number="order.amount"
                                     class="w-16 px-2 py-2 text-center bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg dark:shadow focus:outline-none focus:ring-2 ring-gray-400 dark:ring-gray-600">
                             </div>
                             <p class="font-bold text-2xl text-teal-600 dark:text-teal-500">
-                                Rp. {{ checkout.amount * food.price }}
+                                Rp. {{ order.amount * food.price }}
                             </p>
                         </div>
                         <div class="mb-6">
                             <label for="descriptions" class="font-semibold block mb-4">Descriptions</label>
-                            <textarea v-model="checkout.descriptions"
+                            <textarea v-model="order.descriptions"
                                 class="w-full bg-white dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white p-4 focus:outline-none focus:ring-2 ring-gray-400 dark:ring-gray-600"
                                 id="descriptions" placeholder="Descriptions"></textarea>
                         </div>
@@ -60,7 +60,7 @@
         data() {
             return {
                 food: [],
-                checkout: {
+                order: {
                     amount: 1,
                     descriptions: '',
                     food: {}
@@ -68,11 +68,12 @@
             }
         },
         methods: {
-            checkoutOrder() {
-                if (this.checkout.amount > 0) {
-                    this.checkout.food = this.food;
-                    axios.post('http://localhost:4000/cart', this.checkout)
+            orderNow() {
+                if (this.order.amount > 0) {
+                    this.order.food = this.food;
+                    axios.post('http://localhost:4000/cart', this.order)
                         .then(() => {
+                            this.$router.push({ name : 'Cart' });
                             this.$toast.success('Success add to cart !', {
                                 type: 'success',
                                 position: 'top-right',
