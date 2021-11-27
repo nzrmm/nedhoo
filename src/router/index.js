@@ -3,6 +3,8 @@ import Home from '../views/Home.vue';
 import Foods from '../views/Foods.vue';
 import Details from '../views/Details.vue';
 import Cart from '../views/Cart.vue';
+import OrderSuccess from '../views/OrderSuccess.vue';
+
 
 const routes = [
     {
@@ -24,6 +26,11 @@ const routes = [
         path : '/cart',
         name : 'Cart',
         component : Cart
+    },
+    {
+        path : '/order-success',
+        name : 'Order Success',
+        component : OrderSuccess
     }
 ]
 
