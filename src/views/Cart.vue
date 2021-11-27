@@ -24,19 +24,19 @@
                                 <img src="https://source.unsplash.com/featured/?food"
                                     class="w-52 h-28 object-cover rounded-xl" alt="image-details">
                             </td>
-                            <td class="column-style whitespace-nowrap">
+                            <td class="column-style whitespace-nowrap text-left">
                                 {{ cart.food.name }}
                             </td>
-                            <td class="column-style">
-                                {{ cart.descriptions }}
+                            <td class="column-style text-center">
+                                {{ cart.descriptions ? card.descriptions : '-' }}
                             </td>
-                            <td class="column-style whitespace-nowrap">
+                            <td class="column-style whitespace-nowrap text-center">
                                 {{ cart.amount }}
                             </td>
-                            <td class="column-style whitespace-nowrap">
+                            <td class="column-style whitespace-nowrap text-right">
                                 Rp {{ cart.food.price }}
                             </td>
-                            <td class="column-style whitespace-nowrap">
+                            <td class="column-style whitespace-nowrap text-right">
                                 Rp {{ cart.amount * cart.food.price }}
                             </td>
                             <td class="column-style whitespace-nowrap">
@@ -48,6 +48,14 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
+                            </td>
+                        </tr>
+                        <tr class="text-white font-bold">
+                            <td class="py-16" colspan="5" align="right">
+                                <p>Total :</p>
+                            </td>
+                            <td class="py-16 text-teal-500 text-xl" colspan="2" align="right">
+                                Rp {{ total }}
                             </td>
                         </tr>
                     </tbody>
@@ -74,6 +82,13 @@
         data() {
             return {
                 carts: []
+            }
+        },
+        computed: {
+            total() {
+                return this.carts.reduce((total, data) => {
+                    return total += data.food.price * data.amount
+                }, 0)
             }
         },
         methods: {
