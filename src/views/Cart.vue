@@ -1,11 +1,11 @@
 <template>
-    <Navbar />
+    <Navbar :carts="carts" />
     <main class="py-12">
         <div class="container mx-auto">
             <div class="font-bold text-3xl text-gray-900 dark:text-white mb-12">
                 Your <span class="text-teal-500 border-b-4 border-gray-900 dark:border-gray-400">Carts</span>
             </div>
-            <div class="overflow-x-auto">
+            <div v-if="carts.length" class="overflow-x-auto">
                 <table class="mb-4 table-auto w-full">
                     <thead>
                         <tr>
@@ -52,6 +52,11 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div v-else class="flex justify-center">
+                <div class="py-2 w-96 text-center rounded-lg bg-rose-500 text-white">
+                    No Foods added
+                </div>
             </div>
         </div>
     </main>
