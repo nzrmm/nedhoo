@@ -1,0 +1,78 @@
+{
+  "best-foods": [
+    {
+      "id": 7,
+      "code": "nedhoo-7",
+      "name": "Friend Rice",
+      "price": 12000,
+      "is-ready": true
+    },
+    {
+      "id": 8,
+      "code": "nedhoo-8",
+      "name": "Friend Duck",
+      "price": 20000,
+      "is-ready": true
+    },
+    {
+      "id": 9,
+      "code": "nedhoo-9",
+      "name": "Snail Satay",
+      "price": 16000,
+      "is-ready": true
+    },
+    {
+      "id": 10,
+      "code": "nedhoo-10",
+      "name": "Meatball",
+      "price": 25000,
+      "is-ready": true
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "code": "nedhoo-1",
+      "name": "Grilled Chicken",
+      "price": 10000,
+      "is-ready": true
+    },
+    {
+      "id": 2,
+      "code": "nedhoo-2",
+      "name": "Shrimp Satay",
+      "price": 12000,
+      "is-ready": true
+    },
+    {
+      "id": 3,
+      "code": "nedhoo-3",
+      "name": "Grilled Carp",
+      "price": 25000,
+      "is-ready": true
+    },
+    {
+      "id": 4,
+      "code": "nedhoo-4",
+      "name": "Honey Chicken",
+      "price": 22000,
+      "is-ready": true
+    },
+    {
+      "id": 5,
+      "code": "nedhoo-5",
+      "name": "Grilled Goat",
+      "price": 30000,
+      "is-ready": true
+    },
+    {
+      "id": 6,
+      "code": "nedhoo-6",
+      "name": "Roast Beef",
+      "price": 35000,
+      "is-ready": true
+    }
+  ],
+  "cart": [],
+  "order": []
+}
