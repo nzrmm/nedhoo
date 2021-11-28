@@ -61,7 +61,7 @@
                     </tbody>
                 </table>
 
-                <div class="flex justify-end text-white">
+                <div class="flex justify-start lg:justify-end text-white px-8">
                     <form @submit.prevent="orderNow">
                         <div class="mb-6">
                             <label for="name" class="font-semibold block mb-4">Name</label>
@@ -143,7 +143,7 @@
 
                             // Redirect to order success page
                             this.$router.push({ name: 'Order Success' });
-                            
+
                             this.$toast.success('Success add to cart !', {
                                 type: 'success',
                                 position: 'top-right',

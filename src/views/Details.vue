@@ -2,15 +2,14 @@
     <Navbar />
     <main class="py-12">
         <div class="container">
-            <div class="flex justify-center items-center">
-                <div class="w-5/12">
+            <div class="flex flex-col lg:flex-row justify-center items-center">
+                <div class="w-full sm:w-10/12 lg:w-5/12 mb-6 lg:mb-0">
                     <img src="https://source.unsplash.com/featured/?food"
-                        class="w-full h-[28rem] object-cover rounded-xl" alt="image-details">
+                        class="w-full h-64 sm:h-72 lg:h-[28rem] object-cover rounded-xl" alt="image-details">
                 </div>
-                <div class="w-5/12 px-8 text-white">
+                <div class="w-full sm:w-10/12 lg:w-5/12 px-8 text-white">
                     <h1 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">{{ food.name }}</h1>
-                    <p class="mb-6 text-white/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-                        necessitatibus.
+                    <p class="mb-6 text-white/60">Lorem ipsum dolor sit amet consee adipisicing elit. Aperiam.
                     </p>
                     <form @submit.prevent="addToCart">
                         <div class="mb-6 flex items-center justify-between">
