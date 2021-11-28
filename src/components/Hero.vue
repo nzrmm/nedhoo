@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 mb-6 lg:mb-0">
-                <img src="../assets/images/hero-1.svg" alt="hero-img">
+                <img src="../assets/images/hero.svg" alt="hero-img">
             </div>
         </div>
     </div>
