@@ -3,21 +3,22 @@
     <main class="py-16">
         <Hero />
 
-        <div class="container mx-auto">
-            <div class="font-bold text-3xl text-gray-900 dark:text-white mb-12 text-center">
-                Best <span class="text-teal-500 border-b-4 border-gray-900 dark:border-gray-400">Foods</span>
+        <div class="container">
+            <div class="text-title">
+                Best <span class="text-title-teal">Foods</span>
             </div>
+
             <div class="flex flex-wrap -mx-3 mb-10">
                 <template v-for="food in foods" :key="food.id">
                     <CardFoods :food="food" />
                 </template>
             </div>
+
             <div class="flex justify-center">
-                <router-link :to="{name : 'Foods'}"
-                    class="group relative px-8 inline-flex items-center text-gray-900 dark:text-white transition-all">
-                    <span class="py-2 group-hover:-translate-x-2 transition-all group-hover:border-b border-teal-500 font-medium">All Foods</span>
+                <router-link :to="{name : 'Foods'}" class="btn btn-transparent group">
+                    <span class="btn-text group-hover:border-b border-teal-500">All Foods</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 absolute right-0 opacity-0 group-hover:opacity-100 group-hover:mr-3 transition-all"
+                        class="btn-icon"
                         viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
                             d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
@@ -33,7 +34,7 @@
     import Navbar from '../components/Navbar.vue';
     import Hero from '../components/Hero.vue';
     import CardFoods from '../components/CardFoods.vue';
-    import axios from 'axios';
+    import getBestFoods from '../mixins/getBestFoods'
 
     export default {
         name: 'Home',
@@ -42,23 +43,6 @@
             Hero,
             CardFoods
         },
-        data() {
-            return {
-                foods: []
-            }
-        },
-        mounted() {
-            axios.get('http://localhost:4000/best-foods')
-                .then(response => {
-                    this.foods = response.data;
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        }
+        mixins : [getBestFoods]
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

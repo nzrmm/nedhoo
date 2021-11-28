@@ -3,3 +3,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply px-8 relative inline-flex items-center transition-all;
+    }
+
+    .btn-bg {
+        @apply py-2 bg-teal-500 rounded-xl text-white;
+    }
+
+    .btn-transparent {
+        @apply text-gray-900 dark:text-white
+    }
+
+    .btn-text {
+        @apply  group-hover:-translate-x-2 transition-all;
+    }
+
+    .btn-icon {
+        @apply h-5 w-5 group-hover:mr-3 absolute right-0 opacity-0 group-hover:opacity-100 transition-all
+    }
+
+    .text-title {
+        @apply mb-12 text-center font-bold text-3xl text-gray-900 dark:text-white;
+    }
+
+    .text-title-teal {
+        @apply text-teal-500 border-b-4 border-gray-900 dark:border-gray-400;
+    }
+
+    .input-style {
+        @apply bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg dark:shadow focus:outline-none focus:ring-2 ring-gray-400 dark:ring-gray-600;
+    }
+}

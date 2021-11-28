@@ -1,9 +1,9 @@
 <template>
     <Navbar />
     <main class="py-12">
-        <div class="container mx-auto">
-            <div class="font-bold text-3xl text-gray-900 dark:text-white mb-12 text-center">
-                List <span class="text-teal-500 border-b-4 border-gray-900 dark:border-gray-400">Foods</span>
+        <div class="container">
+            <div class="text-title">
+                List <span class="text-title-teal">Foods</span>
             </div>
             <div class="w-11/12 sm:w-8/12 lg:w-5/12 mx-auto mb-8">
                  <input @keyup="searchFoods" v-model="search" type="text"
@@ -22,6 +22,7 @@
 <script>
     import Navbar from '../components/Navbar.vue';
     import CardFoods from '../components/CardFoods.vue';
+    import getFoods from '../mixins/getFoods'
     import axios from 'axios';
 
     export default {
@@ -30,9 +31,9 @@
             Navbar,
             CardFoods
         },
+        mixins : [getFoods],
         data() {
             return {
-                foods : [],
                 search : ''
             }
         },
@@ -47,18 +48,5 @@
                     })
             }
         },
-        mounted() {
-            axios.get('http://localhost:4000/foods')
-                .then(response => {
-                    this.foods = response.data;
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        },
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

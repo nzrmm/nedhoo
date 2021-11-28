@@ -2,8 +2,8 @@
     <Navbar :carts="carts" />
     <main class="py-12">
         <div class="container mx-auto">
-            <div class="font-bold text-3xl text-gray-900 dark:text-white mb-12">
-                Your <span class="text-teal-500 border-b-4 border-gray-900 dark:border-gray-400">Carts</span>
+            <div class="text-title">
+                Your <span class="text-title-teal">Carts</span>
             </div>
             <div v-if="carts.length" class="overflow-x-auto">
                 <table class="mb-4 table-auto w-full">
@@ -66,20 +66,20 @@
                         <div class="mb-6">
                             <label for="name" class="font-semibold block mb-4">Name</label>
                             <input v-model.trim="order.name" id="name"
-                                class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg dark:shadow focus:outline-none focus:ring-2 ring-gray-400 dark:ring-gray-600"
+                                class="px-4 py-2 input-style"
                                 placeholder="Name">
                         </div>
                         <div class="mb-6">
                             <label for="table" class="font-semibold block mb-4">Table</label>
                             <input type="number" v-model.number="order.table" id="table"
-                                class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg dark:shadow focus:outline-none focus:ring-2 ring-gray-400 dark:ring-gray-600"
+                                class="px-4 py-2 input-style"
                                 placeholder="Table">
                         </div>
                         <button type="submit"
-                            class="group relative px-8 py-2 inline-flex items-center bg-teal-500 rounded-xl text-white transition-all">
-                            <span class="group-hover:-translate-x-2 transition-all">Order Now</span>
+                            class="btn btn-bg group">
+                            <span class="btn-text">Order Now</span>
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 absolute right-0 opacity-0 group-hover:opacity-100 group-hover:mr-3 transition-all"
+                                class="btn-icon"
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
@@ -102,6 +102,7 @@
 <script>
     import Navbar from '../components/Navbar.vue';
     import axios from 'axios';
+    
     export default {
         name: 'Cart',
         components: {
@@ -127,6 +128,8 @@
         methods: {
             orderNow() {
                 if (this.order.name && this.order.table) {
+
+                    // Assign food in order
                     this.order.carts = this.carts
 
                     axios.post('http://localhost:4000/order', this.order)
@@ -138,9 +141,9 @@
                                 .catch(error => console.log(error));
                             })
 
-                            this.$router.push({
-                                name: 'Order Success'
-                            });
+                            // Redirect to order success page
+                            this.$router.push({ name: 'Order Success' });
+                            
                             this.$toast.success('Success add to cart !', {
                                 type: 'success',
                                 position: 'top-right',
